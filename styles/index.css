@@ -1,0 +1,53 @@
+.main_content{
+	margin-top: 120px;
+}
+.brands{
+	margin-bottom: 100px;
+	overflow: hidden;
+}
+.brands:nth-child(2n+1) .know_more {
+	text-align: right;
+}
+.brands:nth-child(2n) .brand_pic {
+	text-align: right;
+} 
+.brands:nth-child(2n) .brand_title {
+	text-align: left;
+}
+.brands:nth-child(2n) .know_more {
+	text-align: right;
+}
+.brand_pic{
+	width: 65%;
+}
+.brand_pic img{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.brand_infs{
+	width: 35%;
+	text-align: left;
+}
+.pl_48 div{
+	padding-left: 48px;
+}
+.pr_48 div{
+	padding-right: 48px;
+}
+
+/*媒介查询*/
+@media only screen and (max-width: 768px) {
+	.main_content{
+		margin-top: 0;
+	}
+	.brands{
+		margin-bottom: 20px;
+	}
+	.brand_pic, .brand_infs, .brand_pic div, .brand_infs div{
+		width: 100%;
+		padding: 0;
+	}
+}
+
+

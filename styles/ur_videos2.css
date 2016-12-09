@@ -1,0 +1,111 @@
+h2.title {
+	text-align: center;
+	margin: 2rem auto;
+	letter-spacing: .32rem;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 53%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.video_box {
+	width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 12px;
+    background: url('images/next_arrow.png') center no-repeat;
+    background-size: 100% auto;
+}
+
+.swiper-button-prev {
+    background-image: url('images/pre_arrow.png')
+}
+
+.lists_box {
+	padding: 0 2rem;
+	font-size: .8rem;
+	margin: 2rem 0 4rem 0;
+}
+
+.lists_title {
+	height: 2rem;
+	line-height: 2rem;
+}
+.lists li {
+	display: inline-block;
+	letter-spacing: .1rem;
+}
+
+.lists li + li {
+	margin-left: 2.5rem;
+}
+
+@media only screen and (max-width: 1024px) {
+	.lists li {
+		display: inline-block;
+		letter-spacing: .1rem;
+	}
+	.lists li + li {
+		margin-left: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 980px) {
+	.lists li {
+		display: inline-block;
+		letter-spacing: 0;
+	}
+	.lists li + li {
+		margin-left: 1.25rem;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.videos_lists_box {
+		margin-left: -2%;
+		margin-right: -2%;
+	}
+	.lists_box {
+		text-align: center;
+	}
+	.lists li {
+		text-align: center;
+		display: block;
+	}
+	.lists li + li {
+		margin: 1rem 0 0 0;
+	}
+	.year {
+		text-align: center;
+		display: block;
+	}
+	a:active {
+		color: #93732b;
+	}
+}
+

@@ -1,0 +1,91 @@
+.brand_good_list{
+	overflow: hidden;
+}
+.goods_pic img{
+	display: block;
+	max-width: 80%;
+}
+.goods_pic{
+	float: left;
+	width: 50%;
+	margin-bottom: 65px;
+	overflow: hidden;
+}
+.goods_pic:nth-child(2n+1) img{
+	float: right;
+	margin-right: 10%;
+}
+.goods_pic:nth-child(2n) img{
+	float: left;
+	margin-left: 10%;
+}
+.goods_pic p{
+	float: left;
+	width: 100%;
+	text-align: center;
+	color: #565656;
+}
+.brand_introduce{
+	position: relative;
+}
+.brand_introduce_pic img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.brand_introduce_text{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-size: 26px;
+	z-index: 99;
+	top: 50%;
+	margin-top: -50px;
+	color: #fff;
+}
+.b_logo_box{
+	height: 32px;
+	margin: 0 auto;
+	background: url(../styles/images/brand_logo.png) center center no-repeat;
+}
+.b_logo_box span{
+	float: right;
+	margin-right: 8px;
+}
+.brand_intr{
+	letter-spacing: 2px;
+}
+.bnt_list_box{
+	width: 82%;
+	margin: 100px auto 0 auto;
+	overflow: hidden;
+}
+.bnt_list_box div{
+	width: 20%;
+	float: left;
+	text-align: center;
+	padding: 10px 0;
+	border: 2px solid #000;
+}
+div.shop_btn{
+	margin: 0 18%;
+}
+@media only screen and (max-width: 768px) {
+	.goods_pic img{
+		min-width: 85%;
+	}
+	.goods_pic:nth-child(2n+1) img{
+		float: left;
+	}
+	.goods_pic:nth-child(2n) img{
+		float: right;
+		margin-right: 0;
+	}
+	.bnt_list_box div{
+		width: 25%;
+	}
+	div.shop_btn{
+		margin: 0 10%;
+	}
+}
+
