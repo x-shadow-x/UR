@@ -1,0 +1,36 @@
+{include file="header.html"}
+<link rel="stylesheet" href="styles/swiper.css">
+<link href="styles/new_arrival.css" rel="stylesheet" type="text/css" />
+<div class="content">
+	<h2 class="title">新品</h2>
+	<div class="picture_box">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="styles/images/new-arrival(newarrival)_03.jpg" alt="ur_magazines">
+                </div>
+                <div class="swiper-slide">
+                    <img src="styles/images/new-arrival(newarrival)_03.jpg" alt="ur_magazines">
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    {include file="goods_lists_tpq.html"}
+</div>
+{include file="footer.html"}
+<script src="js/swiper.min.js"></script>
+<script>
+	$(function() {
+		var swiper = new Swiper('.swiper-container', {
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev',
+	        autoplay: 2500,
+	        loop: true,
+            speed: 500,
+	        autoplayDisableOnInteraction: false
+	    });
+	})
+</script>
+</body>

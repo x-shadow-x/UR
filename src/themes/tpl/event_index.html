@@ -1,0 +1,63 @@
+{include file="header.html"}
+<link href="styles/event_index.css" rel="stylesheet" type="text/css" />
+<div class="content">
+    <h2 class="title">EVENT</h2>
+    <div class="events_box">
+        <div class="event_item">
+            <div class="left_item">
+                <img src="styles/images/event_01.png" alt="event_01">
+                <div>
+                    <span class="event_title">11.11 特供新品 上市</span>
+                    <span class="fr">21.10.2016</span>
+                </div>
+            </div>
+            <div class="right_item">
+                <img src="styles/images/event_02.png" alt="event_02">
+                <div>
+                    <span class="event_title">2016冬装新品发布</span>
+                    <span class="fr">21.10.2016</span>
+                </div>
+            </div>
+        </div>
+        <div class="event_item">
+            <div class="left_item">
+                <img src="styles/images/event_03.png" alt="event_03">
+                <div>
+                    <span class="event_title">店铺特卖季</span>
+                    <span class="fr">21.10.2016</span>
+                </div>
+            </div>
+            <div class="right_item">
+                <img src="styles/images/event_03.png" alt="event_03">
+                <div>
+                    <span class="event_title">2016秋装发布会</span>
+                    <span class="fr">21.10.2016</span>
+                </div>
+            </div>
+        </div>
+        <div class="load_box" id="loadBox">
+        	<span class="load_more" id="loadMore">MORE</span>
+            <span class="load_icon"></span>
+        </div>
+    </div>
+</div>
+<script>
+	$(function() {
+
+		var loadContent = '<div class="event_item"><div class="left_item"><img src="styles/images/event_03.png" alt="event_03"><div><span class="event_title">店铺特卖季</span><span class="fr">21.10.2016</span></div></div><div class="right_item"><img src="styles/images/event_03.png" alt="event_03"><div><span class="event_title">2016秋装发布会</span><span class="fr">21.10.2016</span></div></div></div><div class="event_item"><div class="left_item"><img src="styles/images/event_03.png" alt="event_03"><div><span class="event_title">店铺特卖季</span><span class="fr">21.10.2016</span></div></div><div class="right_item"><img src="styles/images/event_03.png" alt="event_03"><div><span class="event_title">2016秋装发布会</span><span class="fr">21.10.2016</span></div></div></div><div class="event_item"><div class="left_item"><img src="styles/images/event_03.png" alt="event_03"><div><span class="event_title">店铺特卖季</span><span class="fr">21.10.2016</span></div></div><div class="right_item"><img src="styles/images/event_03.png" alt="event_03"><div><span class="event_title">2016秋装发布会</span><span class="fr">21.10.2016</span></div></div></div>';
+
+		$('#loadMore').click(function() {
+            $(this).hide();
+            $('.load_icon').addClass('show');
+
+            // 模拟加载的延迟~实际通过ajax做真正的加载的时候需去掉此延迟函数
+			window.setTimeout(function() {
+                $('#loadBox').before(loadContent);
+                $('.load_icon').removeClass('show');
+                $(this).show();
+            }.bind(this), 1000);
+		});
+	})
+</script>
+{include file="footer.html"}
+</body>

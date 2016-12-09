@@ -1,0 +1,51 @@
+{include file="header.html"}
+
+<link href="styles/phone_login_register.css" rel="stylesheet" type="text/css" />
+<link href="styles/phone_forget_pwd.css" rel="stylesheet" type="text/css" />
+
+<div class="content">
+	<h2 class="title">重置密码</h2>
+
+	<div>
+		<div class="m_input_box m_input_box_s">
+			<input type="text" placeholder="输入您手机号码"><div class="btn_box">
+				<button class="btn m_send_verification_code">发送验证码</button>
+			</div>
+		</div>
+		<div class="m_input_box m_input_box_s">
+			<input type="password" placeholder="输入验证码">
+		</div>
+		<div class="m_input_box">
+			<input type="password" placeholder="输入新密码">
+			<span class="new_pwd_tip"></span>
+		</div>
+		
+		<div class="m_input_box">
+			<input type="password" placeholder="再次输入新密码">
+		</div>
+		<button class="btn m_register">确认新密码</button>
+		
+	</div>
+</div>
+
+{include file="footer.html"}
+<script>
+
+	$(function() {
+		
+		var $sendVerificationCode = $('.m_send_verification_code');
+
+		$sendVerificationCode.click(function() {
+			if(!$sendVerificationCode.hasClass('disable')) {
+				handle($sendVerificationCode, function() {
+					$sendVerificationCode.removeClass('disable');
+					$sendVerificationCode.html('发送验证码');
+				}, 60);
+				$sendVerificationCode.addClass('disable');
+			}
+		});
+	})
+
+
+</script>
+</body>

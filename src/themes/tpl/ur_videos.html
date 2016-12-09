@@ -1,0 +1,155 @@
+{include file="header.html"}
+<link rel="stylesheet" href="styles/video-js.css">
+<link rel="stylesheet" href="styles/ur_videos.css">
+<script>
+$(function() {
+    var $videoContent = $('.video_con');
+    $videoContent.height($videoContent.width() * 0.535);
+})
+</script>
+<div class="content">
+    <h2 class="title">UR系列大片</h2>
+    <div class="video_box">
+        <div class="video_con" id="video_con">
+            <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none" poster="styles/images/ur_videos.png" data-setup="{}">
+                <source src="styles/images/testVideo.mp4" type='video/mp4' />
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a web browser that
+                    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+        </div>
+    </div>
+    <div class="lists_box">
+        <h3 class="lists_title">最新</h3>
+        <div id="videoList" class="video_list">
+            <div>
+                <ul class="lists">
+                    <li>
+                        <a href="#" class="active">
+                            <i><span class="year">2016/11</span>春季男装 新品发布</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><span class="year">2016/10</span>YOUTH系列 冬装</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><span class="year">2016/10</span>WOMEN系列 冬装</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><span class="year">2016/05</span>KID系列 秋装</i>
+                        </a>
+                    </li>
+                </ul>
+                <!--刷新加载-->
+                <div id="pullUp">
+                    <div class="pullUp">
+                        <div>
+                            <span class="pullUpIcon"></span>
+                            <span class="pullUpLabel"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="load_tip">
+            <span></span>
+        </div>
+    </div>
+</div>
+{include file="footer.html"}
+<script src="js/videojs-ie8.js"></script>
+<script src="js/video.js"></script>
+<script src="js/iscroll.js"></script>
+<script>
+function pullUpAction() {
+    var str = '<li><a href="#"><i><span class="year">2016/10</span>YOUTH系列 冬装</i></a></li><li><a href="#"><i><span class="year">2016/10</span>YOUTH系列 冬装</i></a></li><li><a href="#"><i><span class="year">2016/10</span>YOUTH系列 冬装</i></a></li>';
+    $('.lists').append(str);
+    videoList.refresh();
+}
+window.onload = function() {
+    var clientWidth = $(window).width();
+    if (clientWidth <= 768) {
+        pullUpEl = document.getElementById('pullUp');
+        pullUpOffset = pullUpEl.offsetHeight;
+        videoList = new iScroll('videoList', {
+            useTransition: true,
+            onRefresh: function() {
+                if (pullUpEl.className.match('loading')) {
+                    pullUpEl.className = '';
+                    // pullUpEl.querySelector('.pullUpIcon').style.display = "block";
+                    // pullUpEl.querySelector('.pullUpLabel').innerHTML = '查看更多';
+                }
+            },
+            onScrollMove: function() {
+                if (this.y < (this.maxScrollY - 10) && !pullUpEl.className.match('flip')) {
+                    pullUpEl.style.opacity = '1';
+                    pullUpEl.className = 'flip';
+                    // pullUpEl.querySelector('.pullUpIcon').style.display = "block";
+                    // pullUpEl.querySelector('.pullUpLabel').innerHTML = '释放刷新';
+                    this.maxScrollY = this.maxScrollY;
+                } else if (this.y > (this.maxScrollY + 10) && pullUpEl.className.match('flip')) {
+                    pullUpEl.style.opacity = '1';
+                    pullUpEl.className = '';
+                    // pullUpEl.querySelector('.pullUpIcon').style.display = "block";
+                    // pullUpEl.querySelector('.pullUpLabel').innerHTML = '查看更多';
+                    this.maxScrollY = pullUpOffset;
+
+                }
+                /*滑出屏幕时*/
+                if ((this.y < this.maxScrollY) && (this.pointY < 1)) {
+                    this.scrollTo(0, this.maxScrollY, 400);
+                    return;
+                }
+            },
+            onScrollEnd: function() {
+                if (pullUpEl.className.match('flip')) {
+                    pullUpEl.className = 'loading';
+                    if ($('.lists').find('li').length < 12) {
+                        pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';
+                        pullUpAction();
+                    } else {
+                        $('.load_tip').css('visibility', 'hidden');
+                        pullUpEl.querySelector('.pullUpLabel').innerHTML = '';
+                    }
+                }
+            },
+            hScrollbar: false,
+            vScrollbar: false
+        })
+    }
+
+
+
+
+    var bigButton = null;
+    var player = videojs('my-video', {
+            fluid: true,
+
+        }, function() { //视频初始化完毕
+            console.log("视频加载就绪！");
+            bigButton = document.getElementsByClassName("vjs-big-play-button")[0];
+        })
+        // 开始或恢复播放
+    player.on('play', function() {
+        console.log('开始/恢复播放');
+        bigButton.style.display = "none";
+    });
+    // 暂停播放
+    player.on('pause', function() {
+        console.log('暂停播放');
+        bigButton.style.display = "block";
+    });
+    //播放完毕
+    player.on('end', function() {
+        console.log("结束了");
+        bigButton.style.display = "block";
+    });
+}
+</script>
+</body>

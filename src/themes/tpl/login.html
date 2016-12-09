@@ -1,0 +1,51 @@
+<link href="styles/login.css" rel="stylesheet" type="text/css" />
+<div class="login_hover">
+	<div class="login_window">
+		<h2 class="title">登录</h2>
+		<span class="closed_btn" id="loginClosedBtn"></span>
+		<div class="table">
+			<div class="td input_box">
+				<div class="user_name">
+					<input type="text" placeholder="输入账户名/电话号码">
+				</div>
+				<div class="password">
+					<input type="password" placeholder="输入密码">
+				</div>
+				<div class="identifying_code">
+					<input type="text" placeholder="输入验证码">
+					<div class="identifying_code_box">
+						<img src="styles/images/identifying_code_pic.jpg" alt="identifying_code_pic" class="identifying_code_pic">
+						<a href="javascript:void(0)" class="refresh"></a>
+					</div>
+				</div>
+				<div class="login_handle_box">
+					<div class="login_status_box">
+						<label class="login_status"><input type="checkbox">记住我的登录状态</label>
+						<a href="javascript:void(0)" class="forget_pwd">忘记密码</a>
+					</div>
+					<a href="javascript:void(0)" class="login">登录</a>
+				</div>
+			</div>
+			<div class="td other_login_box">
+				<h3 class="title">通过以下账户登录</h3>
+				<a href="javascript:void(0)" class="qq_icon"></a>
+				<a href="javascript:void(0)" class="zhifubao_icon"></a>
+				<a href="javascript:void(0)" class="wechat_icon"></a>
+			</div>
+			<div class="register_link_box">未有账号？<a href="javascript:void(0)" class="register_link">注册</a></div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		var $loginHover = $('.login_hover');
+		$('#loginClosedBtn').click(function() {
+			$loginHover.hide();
+		});
+
+		$('#login').click(function() {
+			$loginHover.show();
+		});
+	})
+</script>

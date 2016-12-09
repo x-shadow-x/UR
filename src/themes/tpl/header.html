@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Cache-Control" content="max-age=3600" />
+	<meta http-equiv="Cache-Control" content="no-transform"/>
+	<meta name="MobileOptimized" content="240" />
+	<meta name="apple-touch-fullscreen" content="YES" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/function.js"></script>
+	<script src="js/header.js"></script>
+	<!-- <script src="js/set_rem.js"></script> -->
+	<!-- <script src="js/left_menu.js"></script> -->
+	<link href="styles/cn.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="styles/scrollbar.css">
+	<title>{if $site_title}{$site_title}{/if}</title>
+</head>
+<body>
+<!--[if !IE]><!-->
+<script> 
+	if (/*@cc_on!@*/false) { 
+		document.documentElement.className+=' ie10'; 
+	} 
+</script><!--<![endif]-->
+
+<div class="customer_service">在线客服</div>
+<div class="to_top" id="toTop"></div>
+<div class="main">
+	<div class="header">
+		{include file="login.html"}
+		{include file="register.html"}
+		{include file="forget_pwd.html"}
+		<div class="login_box ofh">
+			<div class="fl">
+				<a href="javascript:void(0)" class="store_icon">店铺</a>
+				|
+				<a href="javascript:void(0)">关于UR</a>
+			</div>
+			<div class="fr">
+				<a href="javascript:void(0)" class="user_icon" id="login">登录</a>
+				|
+				<a href="javascript:void(0)" id="register">注册</a>
+				|
+				<a href="javascript:void(0)" class="collection_icon"></a>
+				|
+				<a href="javascript:void(0)" class="package_icon"></a>
+			</div>
+		</div>
+		<div class="brand_box">
+			<a href="#" class="brand_name">
+				<img src="styles/images/brand_name.png" alt="URBAN REVIVO">
+			</a>
+			<a href="" class="logo fr">
+				<img src="styles/images/logo.gif" alt="UR">
+			</a>
+		</div>
+		<div class="main_nav">
+			<span class="more" id="more"></span>
+			<ul class="nav_list">
+				<li>
+					<a href="#">WOMEN</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">YOUTH</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">MEN</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">KID</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">ACC</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">ABOUT UR</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">STORE</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">EVENT</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="left_main_nav_out_box" id="leftMainNavOutBox">
+				<div class="left_main_nav_box" id="leftMainNavBox">
+					<span class="hide_nav" id="hideNav"></span>
+					<div class="ofh home_login_box">
+						<a href="javascript:void(0)" class="fl">首页</a>
+						<a href="javascript:void(0)" class="fr">登录/注册</a>
+					</div>
+					<div id="navList" class="left_main_nav_list">
+			        	{include file="left_menu.html"}
+			        </div>
+			        <div class="collection_store_box ofh">
+			        	<a href="javascript:void(0)" class="fl collection_icon">心愿单</a>
+			        	<a href="javascript:void(0)" class="fr store_icon">店铺</a>
+			        </div>
+				</div>
+			</div>
+			<div class="fr search_outer_box">
+				<div class="search_box" id="mainSearchBox">
+					<input type="text" placeholder="输入搜索词..." class="search_input" id="searchInput">
+					<span class="search_clear" id="searchClear"></span>
+					<span class="search_click">搜索</span>
+				</div>
+				<span class="show_search" id="showSearchBtn"></span>
+				
+			</div>
+			<span class="package"></span>
+		</div>
+	</div>

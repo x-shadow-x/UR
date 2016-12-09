@@ -1,0 +1,58 @@
+<link href="styles/forget_pwd.css" rel="stylesheet" type="text/css" />
+<div class="forget_hover">
+	<div class="forget_window">
+		<h2 class="title">重置密码</h2>
+		<span class="closed_btn" id="forgetPwdClosedBtn"></span>
+		<p>您可以通过手机找回密码，稍后我们将发送一条短信帮助您找回密码</p>
+		<div class="input_box">
+			<input type="text" placeholder="输入您的手机号码">
+			<div class="btn_box">
+				<button class="btn send_verification_code">发送验证码</button>
+				<span class="resend_tip">59秒后重发</span>
+			</div>
+		</div>
+		<div class="input_box">
+			<input type="text" placeholder="输入验证码">
+		</div>
+		<div class="input_box">
+			<input type="password" placeholder="输入新密码">
+		</div>
+		<div class="input_box">
+			<input type="password" placeholder="再次输入新密码">
+			<button class="btn">确认新密码</button>
+		</div>
+		<span class="pwd_tip">密码长度8-16位，数字，字母，字符至少包含两种</span>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		var $forgetHover = $('.forget_hover');
+		$('#forgetPwdClosedBtn').click(function() {
+			$forgetHover.hide();
+			$('.login_hover').show();
+		});
+
+		var clientWidth = $(window).width();
+
+		if(clientWidth > 768) {
+			$('.forget_pwd').click(function() {
+				$('.login_hover').hide();
+				$forgetHover.show();
+			});
+		}
+
+		var $sendVerificationCode = $('.send_verification_code');
+
+		$sendVerificationCode.click(function() {
+			if(!$sendVerificationCode.hasClass('disable')) {
+				handle($sendVerificationCode, function() {
+					$sendVerificationCode.removeClass('disable');
+					$sendVerificationCode.html('发送验证码');
+				}, 60);
+				$sendVerificationCode.addClass('disable');
+			}
+		});
+		
+	})
+</script>

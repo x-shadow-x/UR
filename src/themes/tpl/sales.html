@@ -1,0 +1,39 @@
+{include file="header.html"}
+<link rel="stylesheet" href="styles/swiper.css">
+<link href="styles/new_arrival.css" rel="stylesheet" type="text/css" />
+<div class="content">
+	<h2 class="title">大特卖</h2>
+	<div class="picture_box">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="styles/images/sales.jpg" alt="sales">
+                </div>
+                <div class="swiper-slide">
+                    <img src="styles/images/sales.jpg" alt="sales">
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    {include file="goods_lists_tpq.html"}
+</div>
+{include file="footer.html"}
+<script src="js/swiper.min.js"></script>
+<script>
+	$(function() {
+		var swiper = new Swiper('.swiper-container', {
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev',
+	        autoplay: 2500,
+	        loop: true,
+            speed: 500,
+	        autoplayDisableOnInteraction: false
+	    });
+
+        // left_bar_content的内容通过上面的include引入文件，如果是动态数据需在goods_lists_tpq.html处通过变量动态修改显示的内容，而不应在此处通过js来显示改变内容
+        $('.left_bar_content h2').html('全部>大特价');
+	})
+</script>
+</body>

@@ -1,0 +1,123 @@
+{include file="header.html"}
+<link rel="stylesheet" href="styles/swiper.css">
+<link rel="stylesheet" href="styles/ur_magazines.css">
+<div class="content">
+    <h2 class="title">UR时尚杂志</h2>
+    <div class="picture_box">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="styles/images/ur_magazines.png" alt="ur_magazines">
+                </div>
+                <div class="swiper-slide">
+                    <img src="styles/images/ur_magazines.png" alt="ur_magazines">
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <div class="lists_box">
+        <h3 class="lists_title">最新&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+        <div id="magazineList" class="magazine_list">
+            <div>
+                <ul class="lists">
+                    <li><a href="#" class="active"><i>2016/11</i></a></li>
+                    <li><a href="#"><i>2016/09</i></a></li>
+                    <li><a href="#"><i>2016/07</i></a></li>
+                    <li><a href="#"><i>2016/06</i></a></li>
+                    <li><a href="#"><i>2016/04</i></a></li>
+                    <li><a href="#"><i>2016/01</i></a></li>
+                    <li><a href="#"><i>2015/12</i></a></li>
+                    <li><a href="#"><i>2015/10</i></a></li>
+                    <li><a href="#"><i>2015/08</i></a></li>
+                    <li><a href="#"><i>2015/07</i></a></li>
+                    <li><a href="#"><i>2015/05</i></a></li>
+                </ul>
+                <!--刷新加载-->
+                <div id="pullUp">
+                    <div class="pullUp">
+                        <div>
+                            <span class="pullUpIcon"></span>
+                            <span class="pullUpLabel"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="load_tip">
+            <span></span>
+        </div>
+    </div>
+</div>
+{include file="footer.html"}
+<script src="js/swiper.min.js"></script>
+<script src="js/iscroll.js"></script>
+<script>
+function pullUpAction() {
+    var str = '<li><a href="#"><i>2015/05</i></a></li><li><a href="#"><i>2015/05</i></a></li>';
+    $('.lists').append(str);
+    pullUpEl.querySelector('.pullUpLabel').innerHTML = '';
+    magazineList.refresh();
+}
+window.onload = function() {
+    var clientWidth = $(window).width();
+    if (clientWidth <= 768) {
+        pullUpEl = document.getElementById('pullUp');
+        pullUpOffset = pullUpEl.offsetHeight;
+        magazineList = new iScroll('magazineList', {
+            useTransition: true,
+            onRefresh: function() {
+                if (pullUpEl.className.match('loading')) {
+                    pullUpEl.className = '';
+                    // pullUpEl.querySelector('.pullUpIcon').style.display = "block";
+                    // pullUpEl.querySelector('.pullUpLabel').innerHTML = '查看更多';
+                }
+            },
+            onScrollMove: function() {
+                if (this.y < (this.maxScrollY - 10) && !pullUpEl.className.match('flip')) {
+                    pullUpEl.style.opacity = '1';
+                    pullUpEl.className = 'flip';
+                    // pullUpEl.querySelector('.pullUpIcon').style.display = "block";
+                    // pullUpEl.querySelector('.pullUpLabel').innerHTML = '释放刷新';
+                    this.maxScrollY = this.maxScrollY;
+                } else if (this.y > (this.maxScrollY + 10) && pullUpEl.className.match('flip')) {
+                    pullUpEl.style.opacity = '1';
+                    pullUpEl.className = '';
+                    // pullUpEl.querySelector('.pullUpIcon').style.display = "block";
+                    // pullUpEl.querySelector('.pullUpLabel').innerHTML = '查看更多';
+                    this.maxScrollY = pullUpOffset;
+
+                }
+                /*滑出屏幕时*/
+                if ((this.y < this.maxScrollY) && (this.pointY < 1)) {
+                    this.scrollTo(0, this.maxScrollY, 400);
+                    return;
+                }
+            },
+            onScrollEnd: function() {
+                if (pullUpEl.className.match('flip')) {
+                    pullUpEl.className = 'loading';
+                    if ($('.lists').find('li').length < 12) {
+                        pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';
+                        pullUpAction();
+                    } else {
+                        $('.load_tip').css('visibility', 'hidden');
+                        pullUpEl.querySelector('.pullUpLabel').innerHTML = '';
+                    }
+                }
+            },
+            hScrollbar: false,
+            vScrollbar: false
+        })
+    }
+    var swiper = new Swiper('.swiper-container', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        autoplay: 2500,
+        loop: true,
+        autoplayDisableOnInteraction: false
+    })
+}
+</script>
+</body>

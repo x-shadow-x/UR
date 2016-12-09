@@ -1,0 +1,135 @@
+{include file="header.html"}
+
+<link rel="stylesheet" href="styles/video-js.css">
+<link href="styles/index_en.css" rel="stylesheet" type="text/css" />
+<script>
+	$(function() {
+		var $videoContent = $('#video_con');
+		$videoContent.height($videoContent.width() * 0.535);
+	})
+</script>
+
+<div class="content">
+	<div class="video_box">
+		<div class="video_tit">
+			<div class="video_list_box">
+				<span class="video_title">WINTER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2017</span>
+				<ul class="vidwo_list">
+					<li><a href="javascript:void(0)">SPRING&nbsp;&nbsp;&nbsp;&nbsp;2016</a></li>
+					<li class="odd"><a href="javascript:void(0)">SUMMER&nbsp;&nbsp;2016</a></li>
+					<li><a href="javascript:void(0)">AUTUMN&nbsp;&nbsp;2016</a></li>
+					<li class="odd"><a href="javascript:void(0)">WINTER&nbsp;&nbsp;&nbsp;&nbsp;2016</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="video_con" id="video_con">
+			<video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered"  controls preload="none" poster="styles/images/video.png" data-setup="{}">
+			    <source src="styles/images/testVideo.mp4" type='video/mp4' />
+			    <!-- 
+			    <source src="http://视频地址格式2.webm" type='video/webm' />
+			    <source src="http://视频地址格式3.ogv" type='video/ogg' /> 
+			    -->
+			    <p class="vjs-no-js">
+			      To view this video please enable JavaScript, and consider upgrading to a web browser that
+			      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+			    </p>
+			</video>
+		</div>
+	</div>
+	<div class="category_box">
+		<div>
+			<a href="#" class="short_item">
+				<img src="styles/images/women.png" alt="women">
+				<span>WOMEN</span>
+			</a>
+			<a href="#" class="short_item">
+				<img src="styles/images/men.png" alt="men">
+				<span>MEN</span>
+			</a>
+		</div>
+		<div>
+			<a href="#" class="short_item">
+				<img src="styles/images/youth.png" alt="youth">
+				<span>YOUTH</span>
+			</a>
+			<a href="#" class="short_item">
+				<img src="styles/images/kids.png" alt="kids">
+				<span>KIDS</span>
+			</a>
+		</div>
+		<div>
+			<a href="#" class="full_item">
+				<img src="styles/images/acc.png" alt="acc">
+				<span>ACC</span>
+			</a>
+		</div>
+	</div>
+	<div class="product_box">
+		<div class="full_screen">
+			<a href="#" class="full_item">
+				<img src="styles/images/brand_intro.png" alt="brand_intro">
+				<span class="brand_intro_tip">品牌介绍</span>
+			</a>
+		</div>
+		<div>
+			<a href="#" class="short_item">
+				<img src="styles/images/magazines.png" alt="magazines">
+				<span class="magazines_tip">UR时尚杂志</span>
+			</a>
+			<a href="#" class="short_item">
+				<img src="styles/images/video_series.png" alt="video_series">
+				<span class="video_series_tip">UR系列大片</span>
+			</a>
+		</div>
+	</div>
+	<div class="another_box">
+		<span class="item_link">活动</span>
+		<span class="item_link">店铺</span>
+		<span class="item_link">帮助中心</span>
+	</div>
+</div>
+
+{include file="footer.html"}
+<script src="js/videojs-ie8.js"></script>
+<script src="js/video.js"></script>
+<script>
+	window.onload = function() {
+		var bigButton=null;
+		var player=videojs('my-video',{
+			fluid:true,
+
+		},function(){//视频初始化完毕
+			console.log("视频加载就绪！");
+			bigButton=document.getElementsByClassName("vjs-big-play-button")[0];
+		})
+		// 开始或恢复播放
+		player.on('play', function() {  
+			console.log('开始/恢复播放');
+			bigButton.style.display="none";
+		});
+		// 暂停播放
+		player.on('pause', function() {  
+			console.log('暂停播放');
+			bigButton.style.display="block";
+		});
+		//播放完毕
+		player.on('end', function() {
+			console.log("结束了");
+			bigButton.style.display="block";
+		});
+		var $vidwoList = $('.vidwo_list');
+		$('.video_title').click(function() {
+			if($vidwoList.is(':visible')) {
+				$vidwoList.slideUp(320);
+			} else {
+				$vidwoList.slideDown(320);
+			}
+		});
+
+		$vidwoList.delegate('li', 'click', function() {
+			$vidwoList.slideUp(200);
+		});
+
+	}
+</script>
+</body>

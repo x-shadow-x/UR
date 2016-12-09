@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/draw.js"></script>
+</head>
+<body>
+	<div id="box">
+        <div id="main">
+            <div id="bar">拖拽</div>
+            <div id="content">
+                内容……
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var oBox = document.getElementById("box");
+    var oBar = document.getElementById("bar");
+    startDrag(oBar, oBox);
+</script>
+</body>
+</html>

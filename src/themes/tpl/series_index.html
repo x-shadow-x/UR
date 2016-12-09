@@ -1,0 +1,118 @@
+{include file="header.html"}
+<link rel="stylesheet" href="styles/swiper.css">
+<link href="styles/series_index.css" rel="stylesheet" type="text/css" />
+<div class="content">
+    <h2 class="title">YOUTH</h2>
+    <div class="picture_box">
+        <div class="swiper-container">
+            <div class="tip">
+                <span class="date_selected">2016/11</span>
+                <ul class="date_list2">
+                    <li class="active"><a href="javascript:void(0)">2016/8</a></li>
+                    <li><a href="javascript:void(0)">2016/5</a></li>
+                    <li><a href="javascript:void(0)">2016/3</a></li>
+                    <li><a href="javascript:void(0)">2015/12</a></li>
+                    <li><a href="javascript:void(0)">2015/8</a></li>
+                    <li><a href="javascript:void(0)">2015/5</a></li>
+                </ul>
+                <span>></span>
+            </div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="styles/images/series_01.png" alt="series_01">
+                </div>
+                <div class="swiper-slide">
+                    <img src="styles/images/series_01.png" alt="series_01">
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <span class="newest_date">2016/11</span>
+    <ul class="date_list">
+    	<li><a href="javascript:void(0)" class="active">2016/8</a></li>
+    	<li><a href="javascript:void(0)">2016/7</a></li>
+    	<li><a href="javascript:void(0)">2016/6</a></li>
+    	<li><a href="javascript:void(0)">2016/5</a></li>
+    	<li><a href="javascript:void(0)">2016/4</a></li>
+    	<li><a href="javascript:void(0)">2016/3</a></li>
+    	<li><a href="javascript:void(0)">2016/2</a></li>
+    	<li><a href="javascript:void(0)">2016/1</a></li>
+    	<li><a href="javascript:void(0)">2015/12</a></li>
+    	<li><a href="javascript:void(0)">2015/11</a></li>
+    	<li><a href="javascript:void(0)">2015/10</a></li>
+    	<li><a href="javascript:void(0)">2015/9</a></li>
+    	<li><a href="javascript:void(0)">2015/8</a></li>
+    </ul>
+    <div class="table">
+    	<div class="table_td">
+    		<a href="javascript:void(0)">
+                <img src="styles/images/series_hot_coat.png" alt="series_hot_coat">      
+            </a>
+    	</div>
+    	<div class="table_td">
+    		<h2>Hot coat</h2>
+    		<p class="text">冬天不干燥只因穿的不枯燥</p class="text">
+    		<span class="check_btn">立即查看</span>
+    	</div>
+    </div>
+    <ul class="series_list">
+    	<li class="bigger">
+    		<img src="styles/images/series_list1.png" alt="series_list1">
+    		<p>冬季出游特辑</p>
+    	</li>
+    	<li class="middle">
+    		<img src="styles/images/series_list2.png" alt="series_list2">
+    		<p>选购新品</p>
+    	</li>
+    	<li>
+    		<img src="styles/images/series_list3.png" alt="series_list3">
+    		<p>针织“衣”恋</p>
+    	</li>
+    </ul>
+</div>
+{include file="footer.html"}
+<script src="js/swiper.min.js"></script>
+<script>
+$(function() {
+	$('.date_list').delegate('a', 'click', function() {
+		$('.date_list').find('a').removeClass('active');
+		$(this).addClass('active');
+        $('.date_list').slideUp(200);
+	});
+
+	$('.newest_date').click(function() {
+		$(this).toggleClass('active');
+		var $dateList =  $('.date_list');
+		if($dateList.is(':visible')) {
+			$dateList.slideUp(200);
+		} else {
+			$dateList.slideDown(200);
+		}
+	});
+    var swiper = new Swiper('.swiper-container', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        autoplay: 2500,
+        loop: true,
+        autoplayDisableOnInteraction: false
+    });
+    var $dateList2 = $('.date_list2')
+    $('.tip').click(function() {
+        if($dateList2.is(':visible')) {
+            $dateList2.hide();
+        } else {
+            $dateList2.css('display','inline-block');
+        }
+    });
+
+    $('.date_list2').delegate('a', 'click', function(e) {
+        e.stopPropagation();
+        $('.date_list2').hide();
+    })
+
+
+})
+</script>
+</body>
